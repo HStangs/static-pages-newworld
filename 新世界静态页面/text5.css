@@ -174,17 +174,24 @@ body{
     color:#fff;
 }
 /* 下拉选框部分开始 */
-.select { 
+.select{ 
     position: absolute; 
     top:170px;
-    left:130px;
     display: block; 
-    margin: 0 auto; 
     width: 235px; 
     font-size:14px; 
     text-align: left; 
     user-select: none; 
     -webkit-touch-callout: none;
+}
+.select{
+    left:130px;
+}
+.select.select-province{
+    left:400px;
+}
+.select.select-city{
+    left:670px;
 }
 .placeholder {
     height:40px;
@@ -205,34 +212,18 @@ body{
     content: '\f078'; 
     z-index: 10;
 }
-
 .is-open .placeholder:after {
      content: '\f077';
 }
 .search-city .is-open ul { 
     display: block;
 }
-/* .select--white .placeholder { 
-    background: #fff; 
-} */
-/* .select--white{
-    position: absolute; 
-    left:390px;
-    top:0;
-    width:235px;
-    display: block; 
-    background-color: #fff; 
-    z-index: 1; 
-    padding: 1em; 
-    border-radius: 2px; 
-    cursor: pointer;
-} */
 .select ul { 
     display: none; 
     position: absolute; 
     overflow: hidden; 
     width: 100%; 
-    background: #fff; 
+    background: #edecec; 
     border-radius: 2px; 
     top: 100%; 
     left: 0; 
@@ -249,7 +240,21 @@ body{
     cursor: pointer;
 }
 .select ul li:hover { 
-    background: #edecec; 
+    background: #e74f4d; 
+}
+.select-search{
+    position:absolute;
+    left:940px;
+    top:170px;
+    width: 235px; 
+    height:40px;
+    line-height:40px;
+    font-size:16px; 
+    letter-spacing: 2em;    /*设置letter-spacing之后，文字无法居中，因为最后一个字符后还有个2em的距离，可以通过text-indent和padding-left相同距离2em解决*/
+    text-indent:2em;
+    color:#fff; 
+    background-color:#e74f4d;
+    cursor:pointer;
 }
 /* search-city结束 */
 .event{
