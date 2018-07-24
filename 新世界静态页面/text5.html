@@ -56,30 +56,26 @@
         <div class="search-city-line"></div>
         <div class="search-city-ps">每个城市有不同的活动信息，请自主查询您所需要了解的城市</div>
         <div class="select">
-            <span class="placeholder" id="country" onchange="getCountry()">国家</span>
-            <ul>
-                <li>中国</li>
-                <li>美国</li>
-                <li>日本</li>
-                <li>法国</li>
+            <span class="placeholder" id="country">国家</span>
+            <ul id="test" onclick="getCountry()">
             </ul>
         </div>
         <div class="select select-province">
-            <span class="placeholder" id="province" onchange="getProvince()">省份</span>
-            <ul>
-                <li>上海市</li>
+            <span class="placeholder" id="province" >省份</span>
+            <ul onclick="getProvince()">
+                <!-- <li>上海市</li>
                 <li>北京市</li>
                 <li>湖北省</li>
-                <li>四川省</li>
+                <li>四川省</li> -->
             </ul>
         </div>    
         <div class="select select-city">
             <span class="placeholder" id="city">城市</span>
             <ul>
-                <li>上海市</li>
+                <!-- <li>上海市</li>
                 <li></li>
                 <li></li>
-                <li></li>
+                <li></li> -->
             </ul>
         </div>  
         <div class="select-search">搜索</div>        
@@ -225,47 +221,66 @@
 
 
 
-//待完善三级联动选择
+// 待完善三级联动选择
 
 
-    // var chooseCountry = document.getElementById('country');
-    // var chooseProvince = document.getElementById('province');
-    // var chooseCity = document.getElementById('city');
+    var chooseCountry = document.getElementById('country');
+    var chooseProvince = document.getElementById('province');
+    var chooseCity = document.getElementById('city');
 
-    // function getCountry (){
-    //     console.log(1);
-    //     switch(chooseCountry.innerHTML){
-    //         case '中国':
-    //         chooseProvince.innerHTML = '<li">上海市</li><li">北京市</li><li>湖北省</li><li">四川省</li>'
-    //         break;
-    //         case "美国":
-    //         chooseProvince.innerHTML = '<li">111</li><li"></li><li></li><li"></li>'
-    //         break;
-    //         case '日本':
-    //         chooseProvince.innerHTML = '<li">222</li><li"></li><li></li><li"></li>'
-    //         break;
-    //         case '法国':
-    //         chooseProvince.innerHTML = '<li">333</li><li"></li><li></li><li"></li>'
-    //         break;
-    //     }
-    // }
-    // function getProvince (){
-    //     console.log(2);
-    //     switch(chooseProvince.innerHTML){
-    //         case '上海':
-    //         chooseCity.innerHTML = '<li">上海市</li><li"></li><li></li><li"></li>'
-    //         break;
-    //         case '北京':
-    //         chooseCity.innerHTML = '<li">北京市</li><li"></li><li></li><li"></li>'
-    //         break;
-    //         case '湖北省':
-    //         chooseCity.innerHTML = '<li">武汉市</li><li">荆州市</li><li>仙桃市</li><li">黄石市</li>'
-    //         break;
-    //         case '四川省':
-    //         chooseCity.innerHTML = '<li">成都市</li><li">乐山市</li><li>遂宁市</li><li">泸州市</li>'
-    //         break;
-    //     }
-    // }
+    function getCountry (){
+
+        switch(chooseCountry.innerHTML){
+            case '中国':
+            chooseProvince.innerHTML = '<li">上海市</li><li">北京市</li><li>湖北省</li><li">四川省</li>'
+            break;
+            case "美国":
+            chooseProvince.innerHTML = '<li">密西西比州</li><li">加利福尼亚州</li><li>阿拉斯加州</li><li">福罗里达州</li>'
+            break;
+            case '日本':
+            chooseProvince.innerHTML = '<li"></li><li"></li><li></li><li"></li>'
+            break;
+            case '法国':
+            chooseProvince.innerHTML = '<li"></li><li"></li><li></li><li"></li>'
+            break;
+        }
+    }
+    function getProvince (){
+
+        switch(chooseProvince.innerHTML){
+            case '上海':
+            chooseCity.innerHTML = '<li">上海市</li><li"></li><li></li><li"></li>'
+            break;
+            case '北京':
+            chooseCity.innerHTML = '<li">北京市</li><li"></li><li></li><li"></li>'
+            break;
+            case '湖北省':
+            chooseCity.innerHTML = '<li">武汉市</li><li">荆州市</li><li>仙桃市</li><li">黄石市</li>'
+            break;
+            case '四川省':
+            chooseCity.innerHTML = '<li">成都市</li><li">乐山市</li><li>遂宁市</li><li">泸州市</li>'
+            break;
+        }
+    }
+
+var test = document.getElementById('test');
+var thmlTest = '';
+// $.ajax({
+//     url:urlTest,
+//     type:get,
+//     success:function(data){
+//         console.log(data);
+//         for(var i = 0;i<data.length;i++){
+//     thmlTest+= '<li>'+data[i].name+'</li>';
+// }
+// test.innerHTML=thmlTest;
+//     }
+//     })
+var jsonTest=[{id:1,name:"中国"},{id:2,name:"美国"},{id:3,name:"日本"},{id:4,name:"法国"}];
+for(var i = 0;i<jsonTest.length;i++){
+    thmlTest+= '<li>'+jsonTest[i].name+'</li>';
+}
+test.innerHTML=thmlTest;
     </script>
 </body>
 </html>
