@@ -110,6 +110,7 @@ body{
 .wrap-con-start:hover{
     transform: translate(1px,1px);
     box-shadow: -3px -3px 12px 2px rgb(116, 143, 168);
+    border: 1px solid #c0c0c0;
 }
 .wrap-con-start a{
     vertical-align: -10px;
